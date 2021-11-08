@@ -10,13 +10,13 @@ export default function MovieDetail() {
       setData(res.data);
       console.log(res.data);
     });
-  }, []);
+  }, [id]);
   return data ? (
     <div className="movieDetailPage">
       <div className="title">{data.name}</div>
       <div className="MovieDetail">
         <div className="showImage">
-          <img src={data.image.medium} />
+          <img alt="movie poster" src={data.image.medium} />
         </div>
         <div className="smallDetail">
           <div className="ratings">

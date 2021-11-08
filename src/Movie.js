@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Movie(props) {
   const [data, setData] = useState(0);
   const { movieName } = useParams();
-  const [pageNo, setPageNo] = useState(1);
+
   useEffect(() => {
     axios
       .get(`https://api.tvmaze.com/search/shows?q=${movieName}`)
@@ -13,7 +13,7 @@ export default function Movie(props) {
         setData(res.data);
         console.log(res.data);
       });
-  }, []);
+  }, [movieName]);
   return data ? (
     <div className="movie">
       <div className="searchTerm">Searched: {movieName.toUpperCase()}</div>
@@ -23,9 +23,9 @@ export default function Movie(props) {
             <div className="title">{item.show.name}</div>
             <div className="MovieDetail">
               <div className="showImage">
-                <img
-                //   src={item.show.image.medium || item.show.image.original || ''}
-                />
+                {/* <img */}
+                {/* //   src={item.show.image.medium || item.show.image.original || ''} */}
+                {/* /> */}
               </div>
               <div className="smallDetail">
                 <div className="ratings">

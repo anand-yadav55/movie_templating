@@ -1,10 +1,10 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  useParams,
+  
   Switch,
   Route,
-  Link,
+  
 } from 'react-router-dom';
 import Movie from './Movie';
 import MovieDetail from './MovieDetail';
